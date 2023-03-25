@@ -1,6 +1,5 @@
-import { Link, HStack} from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faMedium, faStackOverflow } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin, faMedium, faStackOverflow, faFacebook, faInstagram, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const socialMediaIconsList = [
@@ -14,25 +13,49 @@ const socialMediaIconsList = [
         id : 2,
         url : 'https://www.github.com',
         iconSrc:  faGithub,
-        toDisplay: true,
+        toDisplay: false,
     },
     {
         id : 3,
         url : 'https://www.linkedin.com',
         iconSrc:  faLinkedin,
-        toDisplay: true,
+        toDisplay: false,
     },
     {
         id : 4,
         url : 'https://www.medium.com',
         iconSrc:  faMedium,
-        toDisplay: true,
+        toDisplay: false,
     },
     {
         id : 5,
         url : 'https://www.stackoverflow.com',
         iconSrc:  faStackOverflow,
+        toDisplay: false,
+    },
+    {
+        id : 6,
+        url : 'https://www.facebook.com',
+        iconSrc:  faFacebook,
         toDisplay: true,
+    },
+    {
+        id : 7,
+        url : 'https://www.instagram.com',
+        iconSrc:  faInstagram,
+        toDisplay: true,
+    },
+    {
+        id : 8,
+        url : 'https://www.pinterest.com',
+        iconSrc:  faPinterest,
+        toDisplay: true,
+    },
+    {
+        id : 9,
+        url : 'https://www.twitter.com',
+        iconSrc:  faTwitter,
+        toDisplay: false,
     }
 ];
 
@@ -40,19 +63,21 @@ const linksSocialMediaIcons = socialMediaIconsList.map( theIcon => {
     //console.log(theIcon);
     return (
         theIcon.toDisplay && (
-            <Link key={theIcon.id} href={theIcon.url} isExternal>
+            <li key={theIcon.id}>
+                <a href={theIcon.url}>
                     <FontAwesomeIcon icon={theIcon.iconSrc} size="2x" />
-            </Link>
+                </a>
+            </li>
         )
     );
 })
 
 function SocialMediaIcons(props){
-    return(       
-        <HStack spacing='20px'> 
+    return(
+        <ul className={props.className}>
             {linksSocialMediaIcons}
-        </HStack>                       
-    );     
+        </ul>
+    );
 };
 
 export default SocialMediaIcons;
