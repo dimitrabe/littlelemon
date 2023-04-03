@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+/* Colors */
+.green{
+  background-color: #495E57;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.white{
+  background-color: #FFFFFF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.yellow{
+  background-color: #F4CE14
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.light_gray{
+  background-color: #EDEFEE;
 }
 
-.App-link {
-  color: #61dafb;
+.dark_gray_text{
+  color: #333333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.yellow_text{
+  color: #F4CE14;
+}
+
+.black_text{
+  color: #000000;
+}
+
+.white_text{
+  color: #FFFFFF;
+}
+
+/* Typography */
+/* Display title */
+h1{font-size:64px; margin: 0px; font-weight: 500; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;} /* font-weight: 500; 400 is the same as normal, and 700 is the same as bold*/
+/* Subtitle */
+h2{font-size:40px; margin: -15px 0px 0px 0px; font-weight: normal; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;}
+/* Card title */
+h3{font-size:18px; margin: 0px; font-weight: bold; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
+/* Paragraph text */
+p{font-size:16px; margin: 0px; font-weight: normal; line-height: 1.5; font-family: "Karla", "Garamont", sans-serif;}
+/* lead text CTA etc */
+.lead-text{font-size:18px; margin: 0px; font-weight: 550; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
+/* I do not think that i have used  them somewhere but lets check */
+h4{font-size:80px; margin: 0px; font-weight: normal;}
+h5{font-size:88px; margin: 0px; font-weight: normal;}
+h6{font-size:88px; margin: 0px; font-weight: normal;}
+
+ul{
+  padding : 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+a{
+  padding : 0px;
+  text-decoration: none;
+  white-space: nowrap;
+  color: inherit;
 }

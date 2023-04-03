@@ -3,13 +3,13 @@ import Specials from "./Specials";
 import Testimonials from "./Testimonials";
 import About from "./About";
 
-function Main(props){
-    return(
+function Main(props) {
+    return (
         <main>
-            <Hero />
-            <Specials />
-            <Testimonials />
-            <About />
+            <Hero color="green"/>
+            <Specials color="white"/>
+            <Testimonials color="green"/>
+            <About color="white"/>
         </main>
     )
 }

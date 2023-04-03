@@ -12,11 +12,12 @@ function App() {
     <>
     <Header />
     <Main />
-    {/* <ReservationOptions />
+    {/* 
+    <ReservationOptions />
     <ReservationAlt />
     <ReservationDetails/>
     <ConfirmationPage /> */}
-    <Footer />
+    <Footer color="green"/>
 
     </>
   );
