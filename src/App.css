@@ -227,6 +227,32 @@ a{
   border-radius: 50%;
   margin: 4%;
 }
+/* Image stack */
+.image-stack {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+  margin-top: 2%;
+}
+
+.image-stack img{
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  max-width:400px;
+  box-shadow: 3px 3px 4px #FFFFFF;
+}
+
+.image-stack-top {
+  grid-row: 1;
+  grid-column: 1 / span 7;
+  z-index: 1; /* // tells the browser to make this image on top */
+}
+.image-stack-bottom {
+  grid-column: span 8 / end;
+  grid-row: 1;
+  margin-top: 20%; /*  // slightly arbitrary, keeps proportion once resized */
+}
 /* =/o.o\= media responsiveness*/
 @media (max-width:599px){
   .hide-small{display:none}
