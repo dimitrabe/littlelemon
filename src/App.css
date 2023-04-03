@@ -184,6 +184,15 @@ a{
   }
 }
 
+/* Hero */
+.hero-image{
+  border-radius: 16px;
+  width: 100%;
+  max-width: 442px;
+  height: auto;
+  /* margin-top: 4%; */
+}
+
 /* =/o.o\= media responsiveness*/
 @media (max-width:599px){
   .hide-small{display:none}
@@ -196,6 +205,9 @@ a{
     width: 95%;
   }
   .flexbox-col{
+    width: calc(100% - 30px);
+  }
+  .hero-image{
     width: calc(100% - 30px);
   }
 }
