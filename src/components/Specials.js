@@ -5,11 +5,9 @@ import bruschetta from "../images/bruschetta.svg"
 import lemonDessert from "../images/lemonDessert.jpg";
 import scooterIcon from "../icons/scooterIcon.svg";
 
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Ti na kanw me to papi sto order a delivery??? Na to valw sto button kateutheian?
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const buttonText = "Order a delivery";
-
+const cardBgColor = "light_gray";
+const cardTxtColor = "dark_gray_text";
 
 const cardItems = [
     {   id: 1,
@@ -17,37 +15,47 @@ const cardItems = [
         description: "The famous greek salad of red tomatoes, cucumbers, peppers, olives, and our Chicago style feta cheese with crunchy garlic and rosemary croutons.",
         imageSrc: greekSalad,
         button: buttonText,
-        icon: scooterIcon
+        buttonVisible: true,
+        icon: scooterIcon,
+        iconVisible: true,
     },
     {   id: 2,
         title: "Bruschetta",
         description: "The famous greek salad of red tomatoes, cucumbers, peppers, olives, and our Chicago style feta cheese with crunchy garlic and rosemary croutons. ",
         imageSrc: bruschetta,
         button: buttonText,
-        icon: scooterIcon
+        buttonVisible: true,
+        icon: scooterIcon,
+        iconVisible: true,
     },
     {   id: 3,
         title: "Lemon Dessert",
         description: "The famous greek salad of red tomatoes, cucumbers, peppers, olives, and our Chicago style feta cheese with crunchy garlic and rosemary croutons.",
         imageSrc: lemonDessert,
         button: buttonText,
-        icon: scooterIcon
+        buttonVisible: true,
+        icon: scooterIcon,
+        iconVisible: true,
     }
 ];
 
 const mappedCardItems = cardItems.map(theItem => {
     return (
-        <Card  key={theItem.id} title={theItem.title} description={theItem.description} imageSrc={theItem.imageSrc} button={theItem.button} icon={theItem.icon}/>
+        <Card  key={theItem.id} title={theItem.title} description={theItem.description} imageSrc={theItem.imageSrc}
+            button={theItem.button} buttonVisible={theItem.buttonVisible} icon={theItem.icon} iconVisible={theItem.iconVisible}
+             bgColor={cardBgColor} color={cardTxtColor}/>
     )
   })
 
 
 function Specials(props){
     return(
-        <div className="heroSection">
-            <h1>This week's specials</h1>
-            <Button className="myButton primary" value="Order Online"/>
-            <div className="grid">
+        <div className={`${props.color}`}>
+            <div className="flex-container">
+                <h1 className="dark_gray_text">This week's specials</h1>
+                <Button className="myButton primary" value="Order Online"/>
+            </div>
+            <div className="flex-container">
                 {mappedCardItems}
             </div>
         </div>

@@ -192,7 +192,41 @@ a{
   height: auto;
   /* margin-top: 4%; */
 }
+/* Cards */
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  max-width: 400px;
+  border-radius: 16px;
+}
 
+.card-row{
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-content{
+  flex: 1;
+  padding: 4%;
+}
+
+.card-image{
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.avatar-img{
+  width: 40%;
+  height: auto;
+  max-width: 110px;
+  max-height: 110px;
+  border-radius: 50%;
+  margin: 4%;
+}
 /* =/o.o\= media responsiveness*/
 @media (max-width:599px){
   .hide-small{display:none}
@@ -209,6 +243,10 @@ a{
   }
   .hero-image{
     width: calc(100% - 30px);
+  }
+  .card{
+    width: calc(100% - 30px);
+    /* mipws auto xreiazetai wrap? ti tha ginei an exw perissoteres? */
   }
 }
 

@@ -1,9 +1,8 @@
 function Card(props){
     return(
-        <div className="card">
-        {/* // <Box w="100%" h="100%"  borderRadius='lg' overflow='hidden' backgroundColor="white" color="black"> */}
-            <img src={props.imageSrc} alt={props.title} />
-            <div className="flexbox-col">
+        <div className={`card ${props.bgColor} ${props.color} ${props.direction}`}>
+            <img className={`${(props.avatar && "avatar-img") || (!props.avatar && "card-image")}`} src={props.imageSrc} alt={props.title} />
+            <div className="card-content flexbox-col">
                 <h3> {props.title} </h3>
                 <p>{props.description}</p>
                 {(props.iconVisible || props.buttonVisible) &&
