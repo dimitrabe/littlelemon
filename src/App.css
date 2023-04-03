@@ -129,3 +129,20 @@ a{
 .text-align-center{
   text-align: center;
 }
+
+.myButton{
+  width: 200px;
+  border-radius: 8px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 19px;
+  color: #000000;
+  text-align: center;
+}
+.primary{
+  background: #F4CE14;
+}
+.secondary{
+  background: #FFFFFF;
+  border-color: #F4CE14;
+}
