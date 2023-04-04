@@ -253,6 +253,25 @@ a{
   grid-row: 1;
   margin-top: 20%; /*  // slightly arbitrary, keeps proportion once resized */
 }
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF; /* White background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay .flexbox-col{
+  max-width: 60%;
+  row-gap: 3em;
+  margin: 10% auto;
+}
 /* =/o.o\= media responsiveness*/
 @media (max-width:599px){
   .hide-small{display:none}
@@ -273,6 +292,12 @@ a{
   .card{
     width: calc(100% - 30px);
     /* mipws auto xreiazetai wrap? ti tha ginei an exw perissoteres? */
+  }
+
+  .overlay .flexbox-col{
+    max-width: 90%;
+    row-gap: 3em;
+    margin: 10% auto;
   }
 }
 
