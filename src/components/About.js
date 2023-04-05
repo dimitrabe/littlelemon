@@ -15,7 +15,7 @@ function About(props) {
                         The restaurant features a locally-sourced menu with daily specials.
                     </p>
                 </div>
-                <div className="image-stack">
+                <div className="image-stack" id="myImageStack">
                     <img className="image-stack-bottom"src={chefs1} alt="Two chefs discussing. In front of them there are a few bowls." />
                     <img className="image-stack-top" src={chefs2} alt="Two chefs laughing. Behind them there is a stove." />
                 </div>
