@@ -22,7 +22,7 @@ function ReservationOptions(props) {
                         <input type="date" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${dateIcon})` }} min={new Date().toISOString().split('T')[0]} required />
                         <input type="time" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${timeIcon})` }} min="12:00" max="21:00" required />
                         <br />
-                        <button type="submit" className="myButton primary lead-text align-self-end">Check availability</button>
+                        <button type="submit" className="myButton primary align-self-end">Check availability</button>
                     </form>
                 </div>
             </div>

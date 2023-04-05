@@ -140,19 +140,23 @@ a{
   width: 200px;
   border-radius: 8px;
   display: block;
-  padding-top: 20px;
-  padding-bottom: 19px;
+  padding: 20px 0px 19px 0px;
   color: #000000;
   text-align: center;
   border: none;
+  font-size:18px;
+  font-weight: 550;
+  line-height: 1.2;
+  font-family: "Karla", "Garamont", sans-serif;
 }
 .primary{
   background: #F4CE14;
   color:#000000;
+  border: 3px solid #F4CE14;
 }
 .secondary{
   background: #FFFFFF;
-  border-color: #F4CE14;
+  border: 3px solid #F4CE14;
 }
 
 /* Form Input */
