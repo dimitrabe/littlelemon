@@ -3,8 +3,12 @@ import theRestaurant2 from "../images/restaurant chef B.jpg";
 import numberOfPeopleIcon from "../icons/group_FILL1_wght200_GRAD0_opsz48.svg";
 import timeIcon from "../icons/schedule_FILL0_wght200_GRAD0_opsz48.svg";
 import dateIcon from "../icons/calendar_month_FILL1_wght200_GRAD0_opsz48.svg";
+import { useNavigate } from "react-router-dom";
 
 function ReservationOptions(props) {
+
+    let navigate = useNavigate();
+
     return (
         <div className="ReservationOptionsSection">
             <div className="flex-container">
@@ -14,7 +18,7 @@ function ReservationOptions(props) {
                 </div>
                 <div className="flexbox-col">
                     <h1 className="dark_gray_text">Reservation options</h1>
-                    <form className="flexbox-col">
+                    <form className="flexbox-col" onSubmit={() => {navigate('/ReservationAlt');}}>
                         {/* I need the onChange functionality for this to work...
                          I also need the validate Form on submit to validate if all required fields are filled and valid
                          check the code from the course related to forms react_advanced\week1_lists_forms_context\src */}

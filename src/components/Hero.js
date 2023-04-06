@@ -14,7 +14,7 @@ function Hero(props) {
                         We are a family-owned Mediterranean restaurant, focused on traditional recipes, served with a modern twist.
                     </p>
                     <br/>
-                    <Button className="myButton primary" value="Reserve a table" link="ReservationOptions" />
+                    <Button className="myButton primary" value="Reserve a table" link="/ReservationOptions" />
                 </div>
 
                 <img className="hero-image" src={fingerfood} alt="A person is serving food on a big plate" />

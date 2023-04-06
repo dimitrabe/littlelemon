@@ -9,7 +9,7 @@ function Main(props) {
             <Hero color="green"/>
             <Specials color="white"/>
             <Testimonials color="green"/>
-            <About color="white"/>
+            <About id="about" color="white"/>
         </main>
     )
 }

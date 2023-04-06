@@ -6,11 +6,15 @@ import mailIcon from "../icons/mail_FILL0_wght200_GRAD0_opsz48.svg";
 import personIcon from "../icons/person_FILL0_wght200_GRAD0_opsz48.svg";
 import dietaryRestrIcon from "../icons/no_meals_FILL0_wght200_GRAD0_opsz48.svg";
 import occasionIcon from "../icons/nightlife_FILL0_wght200_GRAD0_opsz48.svg";
+import { useNavigate } from "react-router-dom";
+
+
 
 function ReservationDetails(props) {
+    let navigate = useNavigate();
     return (
         <div className="ReservationDetailsSection">
-            <form>
+            <form onSubmit={() => {navigate('/ConfirmationPage');}}>
                 <div className="flex-container">
                     <h1 className="dark_gray_text">Reservation details</h1>
                     <div className="flexbox-row">

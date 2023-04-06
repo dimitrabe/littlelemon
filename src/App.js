@@ -6,19 +6,23 @@ import ReservationOptions from  "./components/ReservationOptions"
 import ReservationAlt from './components/ReservationAlt';
 import ReservationDetails from './components/ReservationDetails';
 import ConfirmationPage from './components/ConfirmationPage';
+import PageNotFound from './components/PageNotFound';
+
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
     <>
     <Header />
-    <Main />
-    {/* 
-    <ReservationOptions />
-    <ReservationAlt />
-    <ReservationDetails/>
-    <ConfirmationPage /> */}
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="ReservationOptions" element={<ReservationOptions/>}/>
+      <Route path="ReservationAlt" element={<ReservationAlt />}/>
+      <Route path="ReservationDetails" element={<ReservationDetails/>}/>
+      <Route path="ConfirmationPage" element={<ConfirmationPage/>}/>
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
     <Footer color="green"/>
-
     </>
   );
 }

@@ -3,7 +3,7 @@ import chefs2 from "../images/Mario and Adrian b.jpg";
 
 function About(props) {
     return (
-        <div className={`${props.color}`}>
+        <div className={`${props.color}`} id={`${props.id}`}>
             <div className="flex-container">
                 <div className="flexbox-col">
                     <div>

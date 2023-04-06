@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const alternatives = [
     {
@@ -27,6 +28,8 @@ const mappedItems = alternatives.map(theItem => {
 
 
 function ReservationAlt(props) {
+    let navigate = useNavigate();
+
     return (
         <div className="ReservationAltSection">
            <div className="flex-container">
@@ -36,11 +39,11 @@ function ReservationAlt(props) {
                     <h2 className="dark_gray_text text-align-center">Unfortunately, availability is limited for the date and time that you have selected.</h2>
                     <h2 className="dark_gray_text text-align-center">Please select an alternative or contact us at 1234567890.</h2>
                     <br/>
-                    <form className="flexbox-col take-the-full-container align-center">
+                    <form className="flexbox-col take-the-full-container align-center" onSubmit={() => {navigate('/ReservationDetails');}}>
                         {mappedItems}
                         <br/>
                         <div className="flexbox-row align-self-end">
-                            <Button className="myButton secondary" value="Back" link="ReservationOptions" />
+                            <Button className="myButton secondary" value="Back" link="/ReservationOptions" />
                             <button type="submit" className="myButton primary">Proceed</button>
                         </div>
                     </form>

@@ -53,7 +53,7 @@ function Specials(props){
         <div className={`${props.color}`}>
             <div className="flex-container">
                 <h1 className="dark_gray_text">This week's specials</h1>
-                <Button className="myButton primary" value="Order Online"/>
+                <Button className="myButton primary" value="Order Online" link="/OrderOnline"/>
             </div>
             <div className="flex-container">
                 {mappedCardItems}
