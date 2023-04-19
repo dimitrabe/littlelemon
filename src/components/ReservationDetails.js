@@ -12,15 +12,19 @@ import { useNavigate } from "react-router-dom";
 
 function ReservationDetails(props) {
     let navigate = useNavigate();
+    const saveTheDate = new Date(props.reservationData.selectedDate);
+    const fullNameOfDay = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(saveTheDate);
+    const fullNameOfMonth =new Intl.DateTimeFormat("en-US", { month: "long" }).format(saveTheDate);
+
     return (
         <div className="ReservationDetailsSection">
             <form onSubmit={() => {navigate('/ConfirmationPage');}}>
                 <div className="flex-container">
                     <h1 className="dark_gray_text">Reservation details</h1>
                     <div className="flexbox-row">
-                        <p>4 people</p>
-                        <p>Monday 14th February</p>
-                        <p>21.00</p>
+                        <p>{props.reservationData.numberOfPeople} people</p>
+                        <p>{`${fullNameOfDay}  ${saveTheDate.getDate()} ${fullNameOfMonth} ${saveTheDate.getFullYear()}`}</p>
+                        <p>{props.reservationData.selectedTime}</p>
                     </div>
                 </div>
 
@@ -59,7 +63,7 @@ function ReservationDetails(props) {
                 </div>
                 <div className="flex-container space-end">
                     <div className="flexbox-row ">
-                        <Button className="myButton secondary" value="Back" link="ReservationOptions" />
+                        <Button className="myButton secondary" value="Back" link="/ReservationOptions" />
                         <button type="submit" className="myButton primary">Confirm</button>
                     </div>
                 </div>

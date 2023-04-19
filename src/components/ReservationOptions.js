@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 function ReservationOptions(props) {
 
     let navigate = useNavigate();
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        navigate('/ReservationDetails');
+    }
 
     return (
         <div className="ReservationOptionsSection">
@@ -18,15 +22,18 @@ function ReservationOptions(props) {
                 </div>
                 <div className="flexbox-col">
                     <h1 className="dark_gray_text">Reservation options</h1>
-                    <form className="flexbox-col" onSubmit={() => {navigate('/ReservationAlt');}}>
-                        {/* I need the onChange functionality for this to work...
-                         I also need the validate Form on submit to validate if all required fields are filled and valid
-                         check the code from the course related to forms react_advanced\week1_lists_forms_context\src */}
-                        <input type="text" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${numberOfPeopleIcon})`}} id="numOfPeople" placeholder="Number of people" min="1" required />
-                        <input type="date" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${dateIcon})` }} min={new Date().toISOString().split('T')[0]} required />
-                        <input type="time" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${timeIcon})` }} min="12:00" max="21:00" required />
+                    <form className="flexbox-col" onSubmit={handleFormSubmit}>
+                        <input type="text" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${numberOfPeopleIcon})`}}
+                             id="numOfPeople" placeholder="Number of people"
+                             value={props.reservationData.numberOfPeople} onChange={e => props.editReservationData.setNumberOfPeople(e.target.value)} min="1" max="10" required />
+                        <input type="date" id="selectedDate" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${dateIcon})` }}
+                            value={props.reservationData.selectedDate} onChange={e => props.editReservationData.setSelectedDateWrapper(e)} min={props.reservationData.today} required />
+                        <select className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${timeIcon})` }}
+                            value={props.reservationData.selectedTime} onChange={e => props.editReservationData.setSelectedTime(e.target.value)} min={'12:00'} required>
+                                {props.reservationData.optionsAvailableTimes}
+                        </select>
                         <br />
-                        <button type="submit" className="myButton primary align-self-end">Check availability</button>
+                        <button type="submit" className="myButton primary align-self-end">Book</button>
                     </form>
                 </div>
             </div>
