@@ -9,9 +9,10 @@ import ConfirmationPage from './components/ConfirmationPage';
 import PageNotFound from './components/PageNotFound';
 
 import { Routes, Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import { useState, useReducer } from 'react';
-import { fetchAPI } from './components/apis.js'; //, submitAPI 
+import { useState, useReducer, useEffect } from 'react';
+import { fetchAPI, submitAPI } from './components/apis.js';
 
 function App() {
 
@@ -56,6 +57,25 @@ function App() {
     "setSelectedTime": setSelectedTime,
   };
 
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    submitAPI()
+  }, [])
+
+  async function submitReservationDetails(e, data){
+    e.preventDefault()
+    try {
+      const response = await submitAPI(data);
+      if (!response) {
+        throw new Error("SubmitAPI function returned false");
+      }
+      navigate('/ConfirmationPage');
+    } catch (error) {
+      alert("There has been a problem with your submit operation: " + error);
+    }
+  };
+
   return (
     <>
     <Header />
@@ -63,7 +83,7 @@ function App() {
       <Route path="/" element={<Main />} />
       <Route path="ReservationOptions" element={<ReservationOptions reservationData={reservationData} editReservationData={editReservationData} />} />
       {/* <Route path="ReservationAlt" element={<ReservationAlt />}/> */}
-      <Route path="ReservationDetails" element={<ReservationDetails reservationData={reservationData} />} />
+      <Route path="ReservationDetails" element={<ReservationDetails reservationData={reservationData} submitReservationDetails={submitReservationDetails} />} />
       <Route path="ConfirmationPage" element={<ConfirmationPage/>}/>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
