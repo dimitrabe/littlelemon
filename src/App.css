@@ -32,21 +32,18 @@
 }
 
 /* Typography */
+html{font-size: 100%;}
 /* Display title */
-h1{font-size:64px; margin: 0px; font-weight: 500; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;} /* font-weight: 500; 400 is the same as normal, and 700 is the same as bold*/
+h1{font-size: calc(2.25rem + 1.5vw); margin: 0px; font-weight: 500; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;} /* font-weight: 500; 400 is the same as normal, and 700 is the same as bold*/
 /* Subtitle */
-h2{font-size:40px; margin: -15px 0px 0px 0px; font-weight: normal; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;}
+h2{font-size: calc(1.4rem + 1.2vw); margin: -1rem 0px 0px 0px; font-weight: normal; line-height: 1.2; font-family: "Markazi Text", "Garamont", sans-serif;}
 /* Card title */
-h3{font-size:18px; margin: 0px; font-weight: bold; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
+h3{font-size: calc(0.8rem + 0.4vw); margin: 0px; font-weight: bold; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
 /* Paragraph text */
-p{font-size:16px; margin: 0px; font-weight: normal; line-height: 1.5; font-family: "Karla", "Garamont", sans-serif;}
+p{font-size: calc(0.85rem + 0.2vw); margin: 0px; font-weight: normal; line-height: 1.5; font-family: "Karla", "Garamont", sans-serif;}
 /* lead text CTA etc */
-.lead-text{font-size:18px; margin: 0px; font-weight: 550; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
-.section-text{font-size:20px; margin: 0px; font-weight: 800; line-height: 1.1; font-family: "Karla", "Garamont", sans-serif;color:#333333}
-/* I do not think that i have used  them somewhere but lets check */
-h4{font-size:80px; margin: 0px; font-weight: normal;}
-h5{font-size:88px; margin: 0px; font-weight: normal;}
-h6{font-size:88px; margin: 0px; font-weight: normal;}
+.lead-text{font-size: calc(0.8rem + 0.4vw); margin: 0px; font-weight: 550; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
+.section-text{font-size: calc(0.8rem + 0.6vw); margin: 0px; font-weight: 800; line-height: 1.1; font-family: "Karla", "Garamont", sans-serif;color:#333333}
 
 ul{
   padding : 0px;
@@ -160,7 +157,7 @@ a{
   color: #000000;
   text-align: center;
   border: none;
-  font-size:18px;
+  font-size: calc(0.8rem + 0.4vw);
   font-weight: 550;
   line-height: 1.2;
   font-family: "Karla", "Garamont", sans-serif;
