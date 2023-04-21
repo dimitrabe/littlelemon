@@ -92,6 +92,13 @@ a{
   box-sizing: border-box;
 }
 
+.responsiveFlexDir{
+  display: flex;
+  column-gap: 1vw;
+  row-gap: 20px;
+  box-sizing: border-box;
+}
+
 .take-half-the-container{
   max-width: 50%;
   width: 50%;
@@ -232,36 +239,39 @@ select{
   flex-direction: row;
   flex-wrap: nowrap;
   width: 60%;
+  height: 7vh;
+  min-height: 65px;
   margin: auto;
   align-items: center;
   justify-content: space-between;
   padding-top: 2%;
   padding-bottom: 2%;
+  box-sizing: border-box;
 }
 
 .small-icon{
   width: 24px;
 }
 
-#mySidebar{
+.visible{
+  display: block;
+  position: fixed;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 7vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF; /* White background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  text-align: right;
+  padding: 3%;
+  box-sizing: border-box;
+}
+
+.hidden{
   display: none;
 }
-
-.animate-right{
-  position:fixed;
-  animation:animateright 0.4s
-}
-
-/* @keyframes animateright{
-  from{
-      right:-300px;
-      opacity:0;
-  } 
-  to{
-      right:0;
-      opacity:1;
-  }
-} */
 
 /* Hero */
 .hero-image{
@@ -378,7 +388,6 @@ select{
   0%, 50% {
     visibility: hidden;
   }
-
   51%, 100% {
     visibility: normal;
   }
@@ -388,7 +397,14 @@ select{
 @media (max-width:599px){
   .hide-small{display:none}
   .header-container{
-    width: 95%;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
   }
   .flex-container{
     flex-direction: column;
@@ -415,15 +431,26 @@ select{
     max-width: 100%;
     width: 100%;
   }
+  .responsiveFlexDir{
+    flex-direction: column;
+  }
 }
 
 @media (min-width:600px) and (max-width:781px){
   .hide-medium{display:none}
   .header-container{
     width: 90%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
   }
   .flex-container{
     width: 90%;
+  }
+  .responsiveFlexDir{
+    flex-direction: column;
   }
 }
 
@@ -435,6 +462,12 @@ select{
   .flex-container{
     width: 80%;
   }
+  .responsiveFlexDir{
+    flex-direction: row;
+  }
+  .hidden{
+    display: block;
+  }
 }
 
 @media (min-width:971px) and (max-width:1200px){
@@ -445,7 +478,19 @@ select{
   .flex-container{
     width: 70%;
   }
+  .responsiveFlexDir{
+    flex-direction: row;
+  }
+  .hidden{
+    display: block;
+  }
 }
 @media (min-width:1200px){
   .hide-large{display:none}
+  .responsiveFlexDir{
+    flex-direction: row;
+  }
+  .hidden{
+    display: block;
+  }
 }
