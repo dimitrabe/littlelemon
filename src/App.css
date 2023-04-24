@@ -219,7 +219,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   bottom: -24px;
   width: 24px;
   height: 24px;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 #userComment{
@@ -260,7 +260,7 @@ select{
   right: 0;
   bottom: 0;
   background-color: #FFFFFF; /* White background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
   text-align: right;
   padding: 3%;
   box-sizing: border-box;
@@ -317,7 +317,6 @@ select{
 .image-stack {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  position: relative;
   margin-top: 2%;
 }
 
@@ -332,7 +331,7 @@ select{
 .image-stack-top {
   grid-row: 1;
   grid-column: 1 / span 7;
-  z-index: 1; /* // tells the browser to make this image on top */
+  /* z-index: 1; // tells the browser to make this image on top */
 }
 .image-stack-bottom {
   grid-column: span 8 / end;
@@ -369,16 +368,16 @@ select{
 }
 
 #topSlideshow{
+  /* z-index:2; */
+}
+
+#bottomSlideshow{
   animation-name: fadeOut;
   animation-duration: 15s;
   animation-delay: 5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  z-index:2;
-}
-
-#bottomSlideshow{
-  z-index:1;
+  /* z-index:1; */
 }
 
 @keyframes fadeOut{
