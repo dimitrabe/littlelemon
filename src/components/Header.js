@@ -23,7 +23,7 @@ function Header(props){
     return(
         <header className="header-container">
             <img src={logo} alt="The little lemon logo consists of a yellow lemon on the left and right next to it, it is written 'Little Lemon' in capital letters"/>
-            <Nav className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`}/>
+            <Nav className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`} onClick={()=> setSidebarClass("hidden")}/>
             <FontAwesomeIcon icon={faBars} size="1x" className="hide-large dark_gray_text" onClick={clickHamburger}/>
         </header>
     )

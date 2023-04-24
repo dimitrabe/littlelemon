@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 function Nav(props){
     return(
-        <nav className={props.responsiveness} id={props.id}>
+        <nav className={props.responsiveness} id={props.id} onClick={props.onClick}>
             <ul className={props.className}>
                 <li><h3><Link to="/">Home</Link></h3></li>
                 <li><h3><HashLink smooth to="#about">About</HashLink></h3></li>
