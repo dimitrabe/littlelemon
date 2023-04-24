@@ -50,15 +50,16 @@ const mappedCardItems = cardItems.map(theItem => {
 
 function Specials(props){
     return(
-        <div className={`${props.color}`}>
-            <div className="flex-container">
+        <section className={`${props.color}`}>
+            <div className="flex-container take-60percent-of-container align-center-using-margin space-between">
                 <h1 className="dark_gray_text">This week's specials</h1>
                 <Button className="myButton primary" value="Order Online" link="/OrderOnline"/>
             </div>
-            <div className="flex-container">
+            <br />
+            <div className="flex-container space-center">
                 {mappedCardItems}
             </div>
-        </div>
+        </section>
     )
 }
 

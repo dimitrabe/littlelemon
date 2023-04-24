@@ -73,13 +73,13 @@ const mappedCardItems = cardItems.map(theItem => {
 
 function Testimonials(props) {
     return (
-        <div className={`${props.color}`}>
+        <section className={`${props.color}`}>
             <h1 className="yellow_text text-align-center">Testimonials</h1>
             <div className="flex-container">
                 {mappedCardItems}
                 {/* <IconsInARow /> */}
             </div>
-        </div>
+        </section>
     )
 }
 

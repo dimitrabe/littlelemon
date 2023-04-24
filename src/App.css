@@ -45,7 +45,21 @@ p{font-size: calc(0.85rem + 0.2vw); margin: 0px; font-weight: normal; line-heigh
 .lead-text{font-size: calc(0.8rem + 0.4vw); margin: 0px; font-weight: 550; line-height: 1.2; font-family: "Karla", "Garamont", sans-serif;}
 .section-text{font-size: calc(0.8rem + 0.6vw); margin: 0px; font-weight: 800; line-height: 1.1; font-family: "Karla", "Garamont", sans-serif;color:#333333}
 
+section{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+
 ul{
+  padding : 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+menu{
   padding : 0px;
   margin: 0px;
   list-style-type: none;
@@ -58,6 +72,14 @@ a{
   color: inherit;
 }
 
+footer{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+
 /* Flex box */
 
 .flex-container{
@@ -65,12 +87,10 @@ a{
   flex-direction: row;
   column-gap: 2%;
   flex-wrap: nowrap;
-  width: 60%;
+  width: 100%;
   margin: auto;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  justify-content: center;
 }
 
 .flexbox-row{
@@ -99,6 +119,11 @@ a{
 .take-half-the-container{
   max-width: 50%;
   width: 50%;
+}
+
+.take-60percent-of-container{
+  max-width: 60%;
+  width: 60%;
 }
 
 .take-the-full-container{
@@ -147,6 +172,10 @@ a{
 
 .text-align-center{
   text-align: center;
+}
+
+.align-center-using-margin{
+  margin:auto;
 }
 
 .myButton{
@@ -317,7 +346,6 @@ select{
 .image-stack {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  margin-top: 2%;
 }
 
 #myImageStack img{
@@ -367,17 +395,12 @@ select{
   grid-column: 1 / span 12;
 }
 
-#topSlideshow{
-  /* z-index:2; */
-}
-
 #bottomSlideshow{
   animation-name: fadeOut;
   animation-duration: 15s;
   animation-delay: 5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  /* z-index:1; */
 }
 
 @keyframes fadeOut{
@@ -404,15 +427,9 @@ select{
   }
   .flex-container{
     flex-direction: column;
-    row-gap: 40px;
-    width: 95%;
+    row-gap: 20px;
   }
-  .flexbox-col{
-    width: calc(100% - 30px);
-  }
-  .hero-image{
-    width: calc(100% - 30px);
-  }
+
   .card{
     width: calc(100% - 30px);
     /* mipws auto xreiazetai wrap? ti tha ginei an exw perissoteres? */
@@ -430,6 +447,10 @@ select{
   .responsiveFlexDir{
     flex-direction: column;
   }
+  .take-60percent-of-container{
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 @media (min-width:600px) and (max-width:781px){
@@ -442,9 +463,6 @@ select{
     right: 0;
     background-color: #FFFFFF;
   }
-  .flex-container{
-    width: 90%;
-  }
   .responsiveFlexDir{
     flex-direction: column;
   }
@@ -453,9 +471,6 @@ select{
 @media (min-width:782px) and (max-width:970px){
   .hide-large{display:none}
   .header-container{
-    width: 80%;
-  }
-  .flex-container{
     width: 80%;
   }
   .responsiveFlexDir{
@@ -469,9 +484,6 @@ select{
 @media (min-width:971px) and (max-width:1200px){
   .hide-large{display:none}
   .header-container{
-    width: 70%;
-  }
-  .flex-container{
     width: 70%;
   }
   .responsiveFlexDir{

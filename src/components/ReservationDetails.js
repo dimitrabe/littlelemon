@@ -36,9 +36,9 @@ function ReservationDetails(props) {
     // console.log(dataToBeSubmitted);
 
     return (
-        <div className="ReservationDetailsSection">
+        <section>
             <form onSubmit={e => props.submitReservationDetails(e, dataToBeSubmitted)}>
-                <div className="flex-container">
+                <div className="flex-container take-60percent-of-container align-center-using-margin align-center space-between">
                     <h1 className="dark_gray_text">Reservation details</h1>
                     <div className="flexbox-row">
                         <p>{props.reservationData.numberOfPeople} people</p>
@@ -46,8 +46,8 @@ function ReservationDetails(props) {
                         <p>{props.reservationData.selectedTime}</p>
                     </div>
                 </div>
-
-                <div className="flex-container space-center">
+                <br />
+                <div className="flex-container take-60percent-of-container space-evenly">
                     <div className="flexbox-col take-the-full-container">
                         <input type="text" placeholder="Name" className="myFormInput lead-text light_gray dark_gray_text" id="userName"  style={{ backgroundImage: `url(${personIcon})`}} 
                             value={fullName} onChange={e => setFullName(e.target.value)} minLength="2" required />
@@ -80,20 +80,19 @@ function ReservationDetails(props) {
 
                     </div>
                 </div>
-                <div className="flex-container space-center">
-                    <div className="flexbox-row">
-                        <input type="checkbox" id="terms" required />
-                        <label htmlFor="terms" className="dark_gray_text lead-text">By clicking this box, I agree with the Terms of Use and the Privacy Policy of this service.</label>
-                    </div>
+                <br />
+                <div className="flexbox-row take-60percent-of-container align-center-using-margin align-center">
+                    <input type="checkbox" id="terms" required />
+                    <label htmlFor="terms" className="dark_gray_text lead-text">By clicking this box, I agree with the Terms of Use and the Privacy Policy of this service.</label>
                 </div>
-                <div className="flex-container space-end">
-                    <div className="flexbox-row ">
+                <br />
+                <div className="flexbox-row take-60percent-of-container align-center-using-margin align-center space-end">
                         <Button className="myButton secondary" value="Back" link="/ReservationOptions" />
                         <button type="submit" className="myButton primary">Confirm</button>
-                    </div>
                 </div>
+
             </form>
-        </div>
+        </section>
     )
 }
 
