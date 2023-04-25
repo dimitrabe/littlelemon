@@ -47,36 +47,42 @@ function ReservationDetails(props) {
                     </div>
                 </div>
                 <br />
-                <div className="flex-container take-60percent-of-container space-evenly">
+                <div className="flex-container take-60percent-of-container space-evenly align-start">
                     <div className="flexbox-col take-the-full-container">
+                        {/* <label htmlFor="userName" >Full name:</label> */}
                         <input type="text" placeholder="Name" className="myFormInput lead-text light_gray dark_gray_text" id="userName"  style={{ backgroundImage: `url(${personIcon})`}} 
-                            value={fullName} onChange={e => setFullName(e.target.value)} minLength="2" required />
+                            value={fullName} onChange={e => setFullName(e.target.value)} minLength="2" required aria-label="Full name"/>
+                        {/* <label htmlFor="userPhone">Phone number:</label> */}
                         <input type="text" placeholder="Phone" className="myFormInput lead-text light_gray dark_gray_text" id="userPhone" style={{ backgroundImage: `url(${phoneIcon})`}} 
-                            value={phone} onChange={e => setPhone(e.target.value)} min="10" required />
+                            value={phone} onChange={e => setPhone(e.target.value)} min="10" required aria-label="Phone number"/>
+                        {/* <label htmlFor="email">Email address:</label> */}
                         <input type="email" placeholder="Email" className="myFormInput lead-text light_gray dark_gray_text" id="email" style={{ backgroundImage: `url(${mailIcon})`}} 
-                            value={email} onChange={e => setEmail(e.target.value)} required />
+                            value={email} onChange={e => setEmail(e.target.value)} required aria-label="Email address"/>
+                        {/* <label htmlFor="userDiet">Dietary restrictions:</label> */}
                         <input type="text" placeholder="Dietary Restrictions" className="myFormInput lead-text light_gray dark_gray_text" id="userDiet" style={{ backgroundImage: `url(${dietaryRestrIcon})`}}
-                            value={dietRestrictions} onChange={e => setDietRestrictions(e.target.value)}/>
+                            value={dietRestrictions} onChange={e => setDietRestrictions(e.target.value)} aria-label="Dietary restrictions."/>
                     </div>
                     <div className="flexbox-col take-the-full-container">
+                        {/* <label htmlFor="seatingOptions">Seating Options:</label> */}
                         <select name="Seating options" className="myFormInput lead-text light_gray dark_gray_text" id="seatingOptions" style={{ backgroundImage: `url(${dinnerIcon})`}}
-                            value={seatOpt} onChange={e => setSeatOpt(e.target.value)}>
+                            value={seatOpt} onChange={e => setSeatOpt(e.target.value)} aria-label="Seating options">
                             <option value="0">Seating options</option>
                             <option value="Inside">Inside</option>
                             <option value="Outside">Outside</option>
                             <option value="Bar">Bar</option>
                         </select>
-
+                        {/* <label htmlFor="occassionOptions">Occassion:</label> */}
                         <select name="Occasion" className="myFormInput lead-text light_gray dark_gray_text" id="occassionOptions" style={{ backgroundImage: `url(${occasionIcon})`}}
-                            value={occasion} onChange={e => setOccasion(e.target.value)}>
+                            value={occasion} onChange={e => setOccasion(e.target.value)} aria-label="Select the occassion.">
                             <option value="0">Occasion</option>
                             <option value="Birthday">Birthday</option>
                             <option value="Engagement">Engagement</option>
                             <option value="Anniversary">Anniversary</option>
                             <option value="Other">Other (Please specify in the comments)</option>
                         </select>
+                        {/* <label htmlFor="userComment">Comments:</label> */}
                         <textarea placeholder="Type your comments here" className="myFormInput lead-text light_gray dark_gray_text" id="userComment"  style={{ backgroundImage: `url(${commentIcon})`}}
-                            value={comment} onChange={e => setComment(e.target.value)}/>
+                            value={comment} onChange={e => setComment(e.target.value)} aria-label="Type your comments here."/>
 
                     </div>
                 </div>

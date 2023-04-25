@@ -9,13 +9,16 @@ function Header(props){
 
     const [hamburgerClicked, setHamburgerClicked] = useState(false);
     const [sidebarClass, setSidebarClass] = useState("hidden");
+    const [ariaExpanded, setAriaExpanded] = useState(false);
 
     const clickHamburger = () => {
         if (!hamburgerClicked){
             setSidebarClass("visible");
+            setAriaExpanded(true);
         }
         else{
             setSidebarClass("hidden");
+            setAriaExpanded(false);
         }
         setHamburgerClicked(!hamburgerClicked);
     }
@@ -23,8 +26,12 @@ function Header(props){
     return(
         <header className="header-container">
             <img src={logo} alt="The little lemon logo consists of a yellow lemon on the left and right next to it, it is written 'Little Lemon' in capital letters"/>
-            <Nav className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`} onClick={()=> setSidebarClass("hidden")}/>
-            <FontAwesomeIcon icon={faBars} size="1x" className="hide-large dark_gray_text" onClick={clickHamburger}/>
+            <button type="button" id="menubutton" aria-haspopup="true" aria-controls="expanded-menu" aria-expanded={ariaExpanded} aria-label="Menu icon also known as hamburger"
+                className="hide-large dark_gray_text" onClick={clickHamburger}>
+                <FontAwesomeIcon icon={faBars} size="1x" aria-hidden="true"/>
+            </button>
+            <Nav id="expanded-menu" className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`} onClick={()=> clickHamburger()}/>
+            {/* I used this reference to set the aria tags https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/examples/menu-button-links/ */}
         </header>
     )
 }

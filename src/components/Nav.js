@@ -3,14 +3,14 @@ import { HashLink } from 'react-router-hash-link';
 
 function Nav(props){
     return(
-        <nav className={props.responsiveness} id={props.id} onClick={props.onClick}>
+        <nav className={props.responsiveness} id={props.id}>
             <menu className={props.className}>
-                <li><h3><Link to="/">Home</Link></h3></li>
-                <li><h3><HashLink smooth to="#about">About</HashLink></h3></li>
-                <li><h3><Link to="Menu">Menu</Link></h3></li>
-                <li><h3><Link to="ReservationOptions">Reservations</Link></h3></li>
-                <li><h3><Link to="OrderOnline">Order Online</Link></h3></li>
-                <li><h3><Link to="login">Login</Link></h3></li>
+                <li role="none"><h3><Link to="/" onClick={props.onClick} role="menuitem">Home</Link></h3></li>
+                <li role="none"><h3><HashLink smooth to="#about" onClick={props.onClick} role="menuitem">About</HashLink></h3></li>
+                <li role="none"><h3><Link to="Menu" onClick={props.onClick} role="menuitem">Menu</Link></h3></li>
+                <li role="none"><h3><Link to="ReservationOptions" onClick={props.onClick} role="menuitem">Reservations</Link></h3></li>
+                <li role="none"><h3><Link to="OrderOnline" onClick={props.onClick} role="menuitem">Order Online</Link></h3></li>
+                <li role="none"><h3><Link to="login" onClick={props.onClick} role="menuitem">Login</Link></h3></li>
             </menu>
         </nav>
     )
