@@ -25,7 +25,7 @@ function Header(props){
 
     return(
         <header className="header-container">
-            <img src={logo} alt="The little lemon logo consists of a yellow lemon on the left and right next to it, it is written 'Little Lemon' in capital letters"/>
+            <img src={logo} alt="The little lemon logo consists of a yellow lemon and 'Little Lemon' is written in capital letters"/>
             <button type="button" id="menubutton" aria-haspopup="true" aria-controls="expanded-menu" aria-expanded={ariaExpanded} aria-label="Menu icon also known as hamburger"
                 className="hide-large dark_gray_text" onClick={clickHamburger}>
                 <FontAwesomeIcon icon={faBars} size="1x" aria-hidden="true"/>

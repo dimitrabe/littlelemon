@@ -17,7 +17,7 @@ function ReservationOptions(props) {
         <section className="flex-container take-60percent-of-container space-between">
             <div id="mySlideshow" className="image-stack take-half-the-container">
                 <img src={theRestaurant} id="topSlideshow" alt="a view of the terrace of Little Lemon resturant" />
-                <img src={theRestaurant2} id="bottomSlideshow" alt="a view of the terrace of Little Lemon resturant" />
+                <img src={theRestaurant2} id="bottomSlideshow" alt="The chef is adding ingredients in a plate." />
             </div>
             <div className="flexbox-col">
                 <h1 className="dark_gray_text">Reservation options</h1>

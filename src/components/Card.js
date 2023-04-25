@@ -1,7 +1,7 @@
 function Card(props){
     return(
         <div className={`card ${props.bgColor} ${props.color} ${props.direction}`}>
-            <img className={`${(props.avatar && "avatar-img") || (!props.avatar && "card-image")}`} src={props.imageSrc} alt={props.title} />
+            <img className={`${(props.avatar && "avatar-img") || (!props.avatar && "card-image")}`} src={props.imageSrc} alt={`A close look on a ${props.title}`} />
             <div className="card-content flexbox-col">
                 <h3> {props.title} </h3>
                 <p>{props.description}</p>
