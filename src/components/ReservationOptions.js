@@ -28,11 +28,11 @@ function ReservationOptions(props) {
                             value={props.reservationData.numberOfPeople} onChange={e => props.editReservationData.setNumberOfPeople(e.target.value)} min="1" max="10" required />
                     {/* <label htmlFor="selectedDate">Select a date:</label> */}
                     <input type="date" id="selectedDate" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${dateIcon})` }}
-                        aria-label="Select date."
+                        aria-label="Select date." data-testid="selectedDate"
                         value={props.reservationData.selectedDate} onChange={e => props.editReservationData.setSelectedDateWrapper(e)} min={props.reservationData.today} required />
                     {/* <label htmlFor="selectedTime">Select a time:</label> */}
                     <select name="time" id="selectedTime" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${timeIcon})` }}
-                        aria-label="Select time."
+                        aria-label="Select time." data-testid="selectedTime"
                         value={props.reservationData.selectedTime} onChange={e => props.editReservationData.setSelectedTime(e.target.value)} min={'12:00'} required>
                             {props.reservationData.optionsAvailableTimes}
                     </select>
