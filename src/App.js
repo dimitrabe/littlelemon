@@ -38,7 +38,7 @@ function App() {
   const optionsAvailableTimes = availableTimes.map((theTime, index) => <option key={index}>{theTime}</option>);
 
   function setSelectedDateWrapper(e) {
-    console.log("lol");
+    //console.log("lol");
     setSelectedDate(e.target.value);
     setAvailableTimesDispatch({ date: e.target.value });
   }
