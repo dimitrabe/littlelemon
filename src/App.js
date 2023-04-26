@@ -22,7 +22,6 @@ function App() {
 
   const [numberOfPeople, setNumberOfPeople] = useState("");
   const [selectedDate, setSelectedDate] = useState(today);
-  const [selectedTime, setSelectedTime] = useState();
 
   const updateTimes = (availableTimes, action) => {
     if (action.date !== undefined && action.date !== null) {
@@ -33,9 +32,10 @@ function App() {
     }
     return availableTimes;
   }
-  const initialTimes = ['12:00', '13:00', '14:00', '15:00'];
-  const [availableTimes, setAvailableTimesDispatch] = useReducer(updateTimes, initialTimes);
+  const initializeTimes = (getDate) => fetchAPI(getDate);
+  const [availableTimes, setAvailableTimesDispatch] = useReducer(updateTimes, getDate, initializeTimes);
   const optionsAvailableTimes = availableTimes.map((theTime, index) => <option key={index}>{theTime}</option>);
+  const [selectedTime, setSelectedTime] = useState(availableTimes[0]);
 
   function setSelectedDateWrapper(e) {
     //console.log("lol");
