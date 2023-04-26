@@ -23,7 +23,7 @@ function ReservationOptions(props) {
                 <h1 className="dark_gray_text">Reservation options</h1>
                 <form className="flexbox-col" onSubmit={handleFormSubmit}>
                     {/* <label htmlFor="numOfPeople" >Select the number of people:</label> */}
-                    <input type="text" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${numberOfPeopleIcon})`}}
+                    <input type="number" className="myFormInput lead-text light_gray dark_gray_text" style={{ backgroundImage: `url(${numberOfPeopleIcon})`}}
                             id="numOfPeople" placeholder="Number of people" aria-label="Select number of people."
                             value={props.reservationData.numberOfPeople} onChange={e => props.editReservationData.setNumberOfPeople(e.target.value)} min="1" max="10" required />
                     {/* <label htmlFor="selectedDate">Select a date:</label> */}
