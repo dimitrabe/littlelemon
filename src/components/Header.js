@@ -23,6 +23,12 @@ function Header(props){
         setHamburgerClicked(!hamburgerClicked);
     }
 
+    const hideOverlayWhenLinkIsCLicked = () => {
+        setSidebarClass("hidden");
+        setAriaExpanded(false);
+        setHamburgerClicked(false);
+    }
+
     return(
         <header className="header-container">
             <img src={logo} alt="The little lemon logo consists of a yellow lemon and 'Little Lemon' is written in capital letters"/>
@@ -30,7 +36,7 @@ function Header(props){
                 className="hide-large dark_gray_text" onClick={clickHamburger}>
                 <FontAwesomeIcon icon={faBars} size="1x" aria-hidden="true"/>
             </button>
-            <Nav id="expanded-menu" className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`} onClick={()=> clickHamburger()}/>
+            <Nav id="expanded-menu" className="responsiveFlexDir dark_gray_text" responsiveness={`${sidebarClass}`} onClick={()=> hideOverlayWhenLinkIsCLicked()}/>
             {/* I used this reference to set the aria tags https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/examples/menu-button-links/ */}
         </header>
     )

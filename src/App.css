@@ -287,7 +287,7 @@ select{
   position: fixed;
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 7vh;
+  top: max(7vh, 65px);
   left: 0;
   right: 0;
   bottom: 0;
@@ -459,7 +459,7 @@ select{
 @media (min-width:600px) and (max-width:781px){
   .hide-medium{display:none}
   .header-container{
-    width: 90%;
+    width: 100%;
     position: sticky;
     top: 0;
     left: 0;
